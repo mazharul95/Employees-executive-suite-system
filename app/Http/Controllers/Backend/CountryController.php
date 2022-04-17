@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
@@ -17,7 +16,7 @@ class CountryController extends Controller
         }
          return view('countries.index', compact('countries'));
      }
-
+     
      public function create()
      {
          return view('countries.create');
