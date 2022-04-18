@@ -12,10 +12,13 @@ use App\Models\State;
 class StateController extends Controller
 {
    
-    public function index()
+    public function index(Request $request)
     {
         $states = State::all();
-        
+        if ($request->has('search')) {
+            $states = State::where('name', 'like', "%{$request->search}%")->get();
+        }
+
         return view('states.index', compact('states'));
     }
 
